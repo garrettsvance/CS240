@@ -11,8 +11,8 @@ public class Trie implements ITrie{
     // getWordCount
     // getNodeCount
     // toString - done(?)
-    // equals
-    // hashcode
+    // equals - pseudo code written
+    // hashcode - pseudo code sorta written
 
     @Override
     public String toString() {
@@ -82,6 +82,7 @@ public class Trie implements ITrie{
 
     @Override
     public void add(String word) {
+        word = word.toLowerCase();
 
     }
 
