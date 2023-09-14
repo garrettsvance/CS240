@@ -2,15 +2,15 @@ package spell;
 
 public class Trie implements ITrie{
 
-    private TrieNode root;
-    private int wordCount;
-    private int nodeCount;
+    private INode root = new Node();
+    private int wordCount = 0;
+    private int nodeCount = 1;
 
     // add
     // find
-    // getWordCount
-    // getNodeCount
-    // toString - done(?)
+    // getWordCount - ez
+    // getNodeCount - ez
+    // toString - done:tm:
     // equals - pseudo code written
     // hashcode - pseudo code sorta written
 
@@ -26,14 +26,14 @@ public class Trie implements ITrie{
 
     }
 
-    private void toString_Helper(TrieNode n, StringBuilder curWord, StringBuilder output) {
+    private void toString_Helper(INode n, StringBuilder curWord, StringBuilder output) {
 
         if (n.getValue() > 0) {
             output.append(curWord.toString());
             output.append("\n");
         }
 
-        for (int i =0; i < children.length; i++) {
+        for (int i =0; i < n.getChildren().length; i++) {
             INode child = n.getChildren()[i];
             if (child != null) {
 
@@ -42,7 +42,7 @@ public class Trie implements ITrie{
 
                 toString_Helper(child, curWord, output);
 
-                curWord.deleteCharAt(curWord.size()-1);
+                curWord.deleteCharAt(curWord.length()-1);
             }
         }
     }
@@ -59,6 +59,8 @@ public class Trie implements ITrie{
         // do this and d have the same wordCount and nodeCount?
 
         return equals_Helper(this.root, d.root);
+        //this.root is referring to the trie that you're inside of, its the same as "root"
+
 
     }
 
@@ -73,16 +75,50 @@ public class Trie implements ITrie{
 
     @Override
     public int hashCode() {
-
         // Combine the following values:
         // 1. wordCount
         // 2. nodeCount
         // 3. The index of each of the root node's non-null children
+        int index = 0;
+        for (int i = 0; i < 25; i++) {
+            if (root.getChildren()[i] != null) {
+                index = i;
+            }
+        }
+
+        wordCount = getWordCount();
+        nodeCount = getNodeCount();
+        return index * wordCount * nodeCount;
+
     }
 
     @Override
     public void add(String word) {
+
+        // convert to lowercase
+        // process each character 1 by 1
+        // start at the root
+        // get the index by doing letter - 'a'
+
+        char letter;
+        int index;
+        INode currentNode = root;
+
+
         word = word.toLowerCase();
+
+        for (int i = 0; i < word.length(); i++) {
+            letter = word.charAt(i);
+            index = letter - 'a';
+
+            if (currentNode.getChildren()[index] == null) {
+                currentNode.getChildren()[index] = new Node();
+                currentNode = currentNode.getChildren()[index];
+                nodeCount = nodeCount + 1;
+            }
+        }
+        wordCount = wordCount + 1;
+
 
     }
 
@@ -92,12 +128,14 @@ public class Trie implements ITrie{
     }
 
     @Override
-    public int getWordCount() {
-        return 0;
+    public int getWordCount() {   // count the number of non-zero nodes in the trie
+        return wordCount;
     }
 
     @Override
-    public int getNodeCount() {
-        return 0;
+    public int getNodeCount() {   // count the number of nodes in the trie (including zeros)
+        return nodeCount;
     }
 }
+
+
