@@ -73,17 +73,24 @@ public class Trie implements ITrie{
 
     private boolean equals_Helper(INode n1, INode n2) {
         // Compare n1 and n2 to see if they are the same
-            // Do n1 and n2 have the same count?
+            // Do n1 and n2 have the same value?
             // Do n1 and n2 have non-null children in axactly the same indexes?
         // Recurse on the children and compare the child subtrees
+
         if (n1.getValue() != n2.getValue()) {
             return false;
         }
         for (int i = 0; i < n1.getChildren().length; i++) {
             INode child1 = n1.getChildren()[i];
             INode child2 = n2.getChildren()[i];
+            if (child1 == null && child2 != null) {
+                return false;
+            }
+            if (child2 == null && child1 != null) {
+                return false;
+            }
             if (child1 != null && child2 != null) {
-                equals_Helper(child1, child2);
+                return equals_Helper(child1, child2);
             }
         }
         return true;
@@ -101,11 +108,9 @@ public class Trie implements ITrie{
                 index = i;
             }
         }
-
         wordCount = getWordCount();
         nodeCount = getNodeCount();
         return index * wordCount * nodeCount;
-
     }
 
     @Override
@@ -119,7 +124,6 @@ public class Trie implements ITrie{
         char letter;
         int index;
         INode currentNode = root;
-
 
         word = word.toLowerCase();
 
