@@ -49,28 +49,44 @@ public class Trie implements ITrie{
 
     @Override
     public boolean equals(Object o) {
-
         // is o == null?
         // is o == this?
         // do this and o have the same class?
-
-        Trie d = (Trie)o;
-
-        // do this and d have the same wordCount and nodeCount?
-
-        return equals_Helper(this.root, d.root);
-        //this.root is referring to the trie that you're inside of, its the same as "root"
-
-
+        if (o == null) {
+            return false;
+        }
+        if (o == this) { //how does "this" work
+            return true;
+        }
+        if (o.getClass() != this.getClass()) {
+            return false;
+        }
+        Trie d = (Trie) o;
+        if (d.nodeCount != this.nodeCount) {
+            return false;
+        }
+        if (d.wordCount != this.wordCount) {
+            return false;
+        }
+        return equals_Helper(this.root, d.root); //this.root is referring to the trie that you're inside of, its the same as "root"
     }
 
-    private boolean equals_Helper(TrieNode n1, TrieNode n2) {
-
+    private boolean equals_Helper(INode n1, INode n2) {
         // Compare n1 and n2 to see if they are the same
             // Do n1 and n2 have the same count?
             // Do n1 and n2 have non-null children in axactly the same indexes?
         // Recurse on the children and compare the child subtrees
-
+        if (n1.getValue() != n2.getValue()) {
+            return false;
+        }
+        for (int i = 0; i < n1.getChildren().length; i++) {
+            INode child1 = n1.getChildren()[i];
+            INode child2 = n2.getChildren()[i];
+            if (child1 != null && child2 != null) {
+                equals_Helper(child1, child2);
+            }
+        }
+        return true;
     }
 
     @Override
