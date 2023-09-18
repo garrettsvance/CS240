@@ -137,14 +137,30 @@ public class Trie implements ITrie{
                 nodeCount = nodeCount + 1;
             }
         }
-        wordCount = wordCount + 1;
-
-
+        if (currentNode.getValue() == 0) {
+            wordCount = wordCount + 1;
+        }
+        currentNode.incrementValue();
     }
 
     @Override
     public INode find(String word) {
-        return null;
+        char letter;
+        int index;
+        INode currentNode = root;
+
+        word = word.toLowerCase();
+
+        for (int i = 0; i < word.length(); i++) {
+            letter = word.charAt(i);
+            index = letter - 'a';
+
+            if (currentNode.getChildren()[index] == null) {
+                return null;
+            }
+            currentNode = currentNode.getChildren()[index];
+        }
+        return currentNode;
     }
 
     @Override

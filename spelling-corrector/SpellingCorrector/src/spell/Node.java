@@ -2,7 +2,7 @@ package spell;
 
 public class Node implements INode {
 
-    private int count;
+    private int count = 0;
     private Node[] children = new Node[26];
 
 
@@ -17,6 +17,8 @@ public class Node implements INode {
 
     @Override
     public void incrementValue() {
+        // when you get to the end of a word, increase its count
+        count++;
     }
 
     @Override
