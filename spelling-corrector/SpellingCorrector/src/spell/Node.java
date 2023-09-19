@@ -12,14 +12,11 @@ public class Node implements INode {
 
     @Override
     public int getValue() {
-        return 0;
+        return count;
     }
 
     @Override
-    public void incrementValue() {
-        // when you get to the end of a word, increase its count
-        count++;
-    }
+    public void incrementValue() { count++; }
 
     @Override
     public INode[] getChildren() {

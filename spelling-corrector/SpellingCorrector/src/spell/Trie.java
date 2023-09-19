@@ -6,13 +6,7 @@ public class Trie implements ITrie{
     private int wordCount = 0;
     private int nodeCount = 1;
 
-    // add
-    // find
-    // getWordCount - ez
-    // getNodeCount - ez
-    // toString - done:tm:
-    // equals - pseudo code written
-    // hashcode - pseudo code sorta written
+    // TODO: constructors?
 
     @Override
     public String toString() {
