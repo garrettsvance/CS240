@@ -1,7 +1,10 @@
 package spell;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
 
 public class SpellCorrector implements ISpellCorrector {
@@ -12,7 +15,14 @@ public class SpellCorrector implements ISpellCorrector {
 
     @Override
     public void useDictionary(String dictionaryFileName) throws IOException {
+        File file = new File(dictionaryFileName);
+        Scanner scanner = new Scanner(file);
 
+        while (scanner.hasNext()) {
+            dictionary.add(scanner.next());
+        }
+        scanner.close();
+        suggestedWords.clear();
     }
 
     Set<String> suggestedWords = new HashSet();
@@ -31,19 +41,37 @@ public class SpellCorrector implements ISpellCorrector {
         insertionSpellings(inputWord);
 
         //check if the first iteration matched
-        if (suggestedWords.contains(inputWord)) { //will this work with multiple?
-            //TODO: suggested word
-        } else { //begin second iteration
+        String bestString = "";
+        int bestCount = 0;
+        for (String word : suggestedWords) {
+            INode node = dictionary.find(word);
+            if (node != null) {
+                //compare edit distance
+                //compare frequency (nodeCount?)
+                //compare alphabetical order
+                if (bestCount == node.getValue()) { //alpha
+                    //sort alphabetically
+                    // google how to alphabetically sort in java
+
+                }
+                if (bestCount < node.getValue()) { // frequency check
+                    bestCount = node.getValue();
+                    bestString = word;
+                }
+            }
+        }
+
+        //begin second iteration
             for (String word : suggestedWords) {
                 deletionSpellings(word);
                 transpositionSpellings(word);
                 alterationSpellings(word);
                 insertionSpellings(word);
             }
-        }
-        if (suggestedWords.contains(inputWord)) {
-           //TODO: suggested word
-        }
+
+            for (String word : suggestedWords) {
+                //TODO
+            }
             return null;
     }
 
