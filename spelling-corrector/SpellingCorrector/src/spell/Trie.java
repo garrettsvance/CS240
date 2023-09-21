@@ -6,8 +6,6 @@ public class Trie implements ITrie{
     private int wordCount = 0;
     private int nodeCount = 1;
 
-    // TODO: constructors?
-
     @Override
     public String toString() {
 
@@ -43,13 +41,10 @@ public class Trie implements ITrie{
 
     @Override
     public boolean equals(Object o) {
-        // is o == null?
-        // is o == this?
-        // do this and o have the same class?
         if (o == null) {
             return false;
         }
-        if (o == this) { //how does "this" work
+        if (o == this) {
             return true;
         }
         if (o.getClass() != this.getClass()) {
@@ -62,15 +57,10 @@ public class Trie implements ITrie{
         if (d.wordCount != this.wordCount) {
             return false;
         }
-        return equals_Helper(this.root, d.root); //this.root is referring to the trie that you're inside of, its the same as "root"
+        return equals_Helper(this.root, d.root);
     }
 
     private boolean equals_Helper(INode n1, INode n2) {
-        // Compare n1 and n2 to see if they are the same
-            // Do n1 and n2 have the same value?
-            // Do n1 and n2 have non-null children in axactly the same indexes?
-        // Recurse on the children and compare the child subtrees
-
         if (n1.getValue() != n2.getValue()) {
             return false;
         }
@@ -84,7 +74,9 @@ public class Trie implements ITrie{
                 return false;
             }
             if (child1 != null && child2 != null) {
-                return equals_Helper(child1, child2);
+                if (!equals_Helper(child1, child2)) {
+                    return false;
+                }
             }
         }
         return true;
@@ -92,10 +84,6 @@ public class Trie implements ITrie{
 
     @Override
     public int hashCode() {
-        // Combine the following values:
-        // 1. wordCount
-        // 2. nodeCount
-        // 3. The index of each of the root node's non-null children
         int index = 0;
         for (int i = 0; i < 25; i++) {
             if (root.getChildren()[i] != null) {
@@ -109,12 +97,6 @@ public class Trie implements ITrie{
 
     @Override
     public void add(String word) {
-
-        // convert to lowercase
-        // process each character 1 by 1
-        // start at the root
-        // get the index by doing letter - 'a'
-
         char letter;
         int index;
         INode currentNode = root;
@@ -127,9 +109,9 @@ public class Trie implements ITrie{
 
             if (currentNode.getChildren()[index] == null) {
                 currentNode.getChildren()[index] = new Node();
-                currentNode = currentNode.getChildren()[index];
                 nodeCount = nodeCount + 1;
             }
+            currentNode = currentNode.getChildren()[index];
         }
         if (currentNode.getValue() == 0) {
             wordCount = wordCount + 1;
@@ -140,7 +122,7 @@ public class Trie implements ITrie{
     @Override
     public INode find(String word) {
         char letter;
-        int index;
+        int index = 0;
         INode currentNode = root;
 
         word = word.toLowerCase();
@@ -154,7 +136,10 @@ public class Trie implements ITrie{
             }
             currentNode = currentNode.getChildren()[index];
         }
-        return currentNode;
+        if (currentNode.getValue() > 0) {
+            return currentNode;
+        }
+        return null;
     }
 
     @Override

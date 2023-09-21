@@ -6,10 +6,6 @@ public class Node implements INode {
     private Node[] children = new Node[26];
 
 
-    // getValue
-    // incrementValue
-    // getChildren
-
     @Override
     public int getValue() {
         return count;
