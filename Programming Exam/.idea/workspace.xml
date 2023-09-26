@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="120dde17-1a2c-4f44-b757-da849115e312" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Course Directory/softwareconstruction" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgammingExam/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/SpellingCorrectorExam.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/setup/empty-project.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/setup/implement-ispellcorrector.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/setup/new-project.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/setup/project-structure.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/setup/run-tests.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/setup/setup.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/setup/starter-code.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/specification.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/spelling-corrector.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/jars/apiguardian-api-1.1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/jars/junit-jupiter-api-5.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/jars/junit-platform-commons-1.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/jars/opentest4j-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/notsobig.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/passoff/SpellTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/passoff/TrieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/spell/INode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/spell/ISpellCorrector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/spell/ITrie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/spell/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/word.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spelling-corrector/SpellingCorrectorExam/spelling-corrector/starter-code/words.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spelling-corrector/starter-code/jars/apiguardian-api-1.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spelling-corrector/starter-code/jars/junit-jupiter-api-5.6.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spelling-corrector/starter-code/jars/junit-platform-commons-1.6.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spelling-corrector/starter-code/jars/opentest4j-1.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spelling-corrector/starter-code/passoff/SpellTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spelling-corrector/starter-code/passoff/TrieTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spelling-corrector/starter-code/spell/INode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spelling-corrector/starter-code/spell/ISpellCorrector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spelling-corrector/starter-code/spell/ITrie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spelling-corrector/starter-code/spell/Main.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2Vl75Va11rw0TWwreB9ERpvzJ8d" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/garre/CS240/Programming Exam"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="120dde17-1a2c-4f44-b757-da849115e312" name="Changes" comment="" />
+      <created>1695398629568</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695398629568</updated>
+    </task>
+    <servers />
+  </component>
+</project>
